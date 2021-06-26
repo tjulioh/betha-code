@@ -6,4 +6,5 @@
 Desafios realizados:
 - [x] Desafio 01 - [PostgreSQL](https://github.com/tjulioh/betha-code/blob/main/desafio/1/)
 - [x] Desafio 02 - [Java](https://github.com/tjulioh/betha-code/blob/main/desafio/2/)
-- [ ] Desafio 03 - 
+- [X] Desafio 03 - [Java Swing](https://github.com/tjulioh/betha-code/blob/main/desafio/3/)
+- [ ] Desafio 04 - 
