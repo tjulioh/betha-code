@@ -22,7 +22,7 @@ public class PesquisarArray {
 
         inicio = System.currentTimeMillis();
 
-        Arrays.binarySearch(numeroInteiros, numeroPesquisado);
+        Arrays.binarySearch(numeroInteiros,numeroPesquisado);
 
         fim = System.currentTimeMillis();
 
