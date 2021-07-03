@@ -29,7 +29,7 @@ public class OrientacaoMain {
 
         public static void main(String[] args) {
 
-            CarroCorrida carroEquipeVelociddade = new CarroCorrida();
+            CarroCorrida carroEquipeVelocidade = new CarroCorrida();
             CarroCorrida carroEquipeTrapaceiros = new CarroCorrida();
 
             Piloto pilotocCarroEquipeVelociddade = new Piloto();
@@ -43,31 +43,31 @@ public class OrientacaoMain {
             pilotoCarroEquipeTrapaceiros.idade = 27;
             pilotoCarroEquipeTrapaceiros.habilidade = 65;
 
-            carroEquipeVelociddade.piloto = pilotocCarroEquipeVelociddade;
+            carroEquipeVelocidade.piloto = pilotocCarroEquipeVelociddade;
             carroEquipeTrapaceiros.piloto = pilotoCarroEquipeTrapaceiros;
 
-            carroEquipeVelociddade.numeroIdentifciacao = 1;
+            carroEquipeVelocidade.numeroIdentifciacao = 1;
             carroEquipeTrapaceiros.numeroIdentifciacao = 2;
 
-            carroEquipeVelociddade.ligar();
+            carroEquipeVelocidade.ligar();
             carroEquipeTrapaceiros.ligar();
 
-            carroEquipeVelociddade.acelerar();
+            carroEquipeVelocidade.acelerar();
             carroEquipeTrapaceiros.acelerar();
 
-            carroEquipeVelociddade.acelerar();
+            carroEquipeVelocidade.acelerar();
             carroEquipeTrapaceiros.acelerar();
 
-            carroEquipeVelociddade.acelerar();
+            carroEquipeVelocidade.acelerar();
             carroEquipeTrapaceiros.velocidadeAtual = 200.0;
 
-            System.out.println(carroEquipeVelociddade.velocidadeAtual);
+            System.out.println(carroEquipeVelocidade.velocidadeAtual);
             System.out.println(carroEquipeTrapaceiros.velocidadeAtual);
         }
 
     }
 
-    static class Piloto{
+    static class Piloto {
 
         //Estado
         String nome;
@@ -75,7 +75,7 @@ public class OrientacaoMain {
         Integer habilidade;
     }
 
-    static class CarroCorrida{
+    static class CarroCorrida {
 
         //Estado
         Integer numeroIdentifciacao;
