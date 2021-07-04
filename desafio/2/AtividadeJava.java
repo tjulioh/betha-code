@@ -4,7 +4,7 @@ public class AtividadeJava {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);  
 
-        //Questão Um
+        //Questão Um - Implemente um programa que recebe um número de 1 a 7 e imprime o dia da semana correspondente.
         //Método Um
         System.out.print("Digite o numero referente ao dia da semana: ");  
         int dia = s.nextInt();                     
@@ -40,21 +40,21 @@ public class AtividadeJava {
                 System.out.println("Favor informar um dia valido!");                
         }  
 
-        //Questão Dois
+        //Questão Dois - Escreva um laço while que execute 20 vezes, imprimindo o valor da variável x que inicialmente está com valor 10.
         int x = 10;
         while (x <= 30) {
             System.out.println("Enquanto de N° " + x);
             x++;            
         }
 
-        //Questão Três
+        //Questão Três - Converta este laço do exercício anterior para um do-while.
         x = 10;
         do {
             System.out.println("Enquanto de N° " + x);
             x++;            
         } while (x <= 30);
 
-        //Questão Quatro        
+        //Questão Quatro - Desenvolva um programa que solicita ao usuário um número inteiro de no máximo 4 dígitos. Inverta esse número.
         int a;
         int n;
         int r = 0;        
@@ -76,7 +76,7 @@ public class AtividadeJava {
         }
         System.out.println("Numero inverso de " + n + " é " + r);  
 
-        //Questão Cinco
+        //Questão Cinco - Implemente um programa para calcular a área de um trapézio, onde: h = altura b = base menor B = base maior Área = (h.(b+B))/2
         System.out.println("Digite a altura para calcular área de um trapézio: ");  
         double altura = s.nextDouble();
         System.out.println("Digite a base menor: ");  
@@ -85,7 +85,7 @@ public class AtividadeJava {
         double baseMenor = s.nextDouble();
         System.out.println("Área do trapézio: " + (altura*(baseMenor+baseMaior))/2);  
 
-        //Questão Seis
+        //Questão Seis - Faça um programa que imprima os quadrados dos números inteiros ímpares entre 15 e 35.
         for (int i = 15;i < 35;i++){
             if(i%2==0){
                 continue;

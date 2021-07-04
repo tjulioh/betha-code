@@ -1,4 +1,4 @@
-# Desafio Java
+# Desafio Java Swing
 
 1. Crie um programa que percorra um array de 10 posições e imprima o seu conteúdo.
 

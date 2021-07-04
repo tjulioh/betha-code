@@ -8,3 +8,6 @@ Desafios realizados:
 - [x] Desafio 02 - [Java](https://github.com/tjulioh/betha-code/blob/main/desafio/2/)
 - [X] Desafio 03 - [Java Swing](https://github.com/tjulioh/betha-code/blob/main/desafio/3/)
 - [ ] Desafio 04 - 
+
+Exercícios extras realizados:
+- [x] Exercício 01 - [Java Herança](https://github.com/tjulioh/betha-code/blob/main/extra/1/)
