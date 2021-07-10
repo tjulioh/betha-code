@@ -10,4 +10,5 @@ Desafios realizados:
 - [ ] Desafio 04 - 
 
 Exercícios extras realizados:
-- [x] Exercício 01 - [Java Herança](https://github.com/tjulioh/betha-code/blob/main/extra/1/)
+- [x] Exercício 01 - [Java Métodos](https://github.com/tjulioh/betha-code/blob/main/extra/1/)
+- [x] Exercício 02 - [Java Herança e Encapsulamento](https://github.com/tjulioh/betha-code/blob/main/extra/2/)
