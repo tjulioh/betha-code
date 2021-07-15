@@ -1,4 +1,4 @@
-# Desafio Java Swing
+# Desafio Java Herança e Encapsulamento
 
 * Criar Classes e suas extensões:
     1. PESSOA: id, nome, endereço e telefone.
