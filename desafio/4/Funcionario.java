@@ -25,6 +25,6 @@ public class Funcionario extends PessoaFisica{
     }
 
     public void dissidioAplicar(Double dissidio){
-        this.salarioBruto += (dissidio / 100)*this.salarioBruto;
+        this.salarioBruto += (this.salarioBruto / 100)*dissidio;
     }
 }
