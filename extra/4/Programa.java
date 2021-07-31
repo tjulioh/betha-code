@@ -4,7 +4,7 @@ public class Programa {
         System.out.println(quadrado.getNomeFigura());
         System.out.println(quadrado.getArea());
 
-        Triangulo triangulo = new Triangulo(5,5,5,5,5);
+        FiguraGeometrica triangulo = new Triangulo(5,4,5,4,3);
         System.out.println(triangulo.getNomeFigura());
         System.out.println(triangulo.getArea());
     }
