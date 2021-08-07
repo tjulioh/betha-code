@@ -12,7 +12,7 @@ public class Programa {
             } else if (numero < 3) {
                 throw new ValorMenorQueOPermitidoException("Valor menor que o permitido!");
             } else {
-                System.out.println("Valor valido!");
+                System.out.println("Numero valido!");
             }
         } catch (Exception e) {
             System.out.println("Regra: " + e.getMessage());
