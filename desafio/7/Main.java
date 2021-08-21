@@ -1,27 +1,39 @@
-import model.Cliente;
-import repository.ClienteRepository;
-import service.ClienteService;
+import model.Diretor;
+import model.Funcionario;
+import repository.DiretorRepository;
+import repository.FuncionarioRepository;
+import service.DiretorService;
+import service.FuncionarioService;
 
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-        Cliente cliente = new Cliente(25, "BrunoK", "04696900975", 1.47, 96.6, null, 1L);
+        System.out.println("Funcionarios:");
+        Funcionario funcionario = new Funcionario(1,"Thiago", "04696900975", 3951.6);
 
-        ClienteService service = new ClienteService();
+        FuncionarioService funcionarioService = new FuncionarioService();
+        funcionarioService.save(funcionario);
 
-        service.save(cliente);
+        funcionario.setNome(funcionario.getNome() + " Julio");
+        funcionarioService.update(funcionario);
 
-        cliente.setNome(cliente.getNome() + " - alterado");
+        FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+        funcionarioRepository.findAll();
+        funcionarioRepository.findById(1);
 
-        service.update(cliente);
+        System.out.println("Diretores:");
+        Diretor diretor = new Diretor(1,"Bruno", "07593302271", 9951.6,729.1);
 
-        ClienteRepository repository = new ClienteRepository();
+        DiretorService diretorService = new DiretorService();
+        diretorService.save(diretor);
 
-        repository.findAll();
+        diretor.setNome(diretor.getNome() + " Kurzawe");
+        diretorService.update(diretor);
 
-        repository.findById(10);
-
+        DiretorRepository diretorRepository = new DiretorRepository();
+        diretorRepository.findAll();
+        diretorRepository.findById(1);
     }
 }
