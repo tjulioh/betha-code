@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-        System.out.println("Funcionarios:");
+        System.out.println(" - Funcionarios");
         Funcionario funcionario = new Funcionario(1,"Thiago", "04696900975", 3951.6);
 
         FuncionarioService funcionarioService = new FuncionarioService();
@@ -20,10 +20,12 @@ public class Main {
         funcionarioService.update(funcionario);
 
         FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+        System.out.println("Listar Todos:");
         funcionarioRepository.findAll();
+        System.out.println("Listar Especifico:");
         funcionarioRepository.findById(1);
 
-        System.out.println("Diretores:");
+        System.out.println("\n - Diretores");
         Diretor diretor = new Diretor(1,"Bruno", "07593302271", 9951.6,729.1);
 
         DiretorService diretorService = new DiretorService();
@@ -33,7 +35,9 @@ public class Main {
         diretorService.update(diretor);
 
         DiretorRepository diretorRepository = new DiretorRepository();
+        System.out.println("Listar Todos:");
         diretorRepository.findAll();
+        System.out.println("Listar Especifico:");
         diretorRepository.findById(1);
     }
 }
