@@ -13,7 +13,7 @@ public class FuncionarioService implements IService<Funcionario> {
     public Funcionario save(Funcionario funcionario) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
         try (PreparedStatement insert = conn.prepareStatement("insert into folha.funcionario values(?,?,?,?)")) {
-            insert.setInt(1, funcionario.getId());
+            insert.setLong(1, funcionario.getId());
             insert.setString(2, funcionario.getNome());
             insert.setString(3, funcionario.getCpf());
             insert.setDouble(4, funcionario.getSalario());
@@ -31,7 +31,7 @@ public class FuncionarioService implements IService<Funcionario> {
         update.setString(1, funcionario.getNome());
         update.setString(2, funcionario.getCpf());
         update.setDouble(3, funcionario.getSalario());
-        update.setInt(4, funcionario.getId());
+        update.setLong(4, funcionario.getId());
         update.executeUpdate();
         conn.close();
 
@@ -42,7 +42,7 @@ public class FuncionarioService implements IService<Funcionario> {
     public Funcionario delete(Funcionario funcionario) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
         PreparedStatement statement2 = conn.prepareStatement("DELETE FROM folha.funcionario WHERE ID = ?");
-        statement2.setInt(1, funcionario.getId());
+        statement2.setLong(1, funcionario.getId());
         statement2.executeUpdate();
         conn.close();
 

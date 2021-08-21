@@ -13,7 +13,7 @@ public class DiretorService implements IService<Diretor> {
     public Diretor save(Diretor funcionario) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
         try (PreparedStatement insert = conn.prepareStatement("insert into folha.diretor values(?,?,?,?,?)")) {
-            insert.setInt(1, funcionario.getId());
+            insert.setLong(1, funcionario.getId());
             insert.setString(2, funcionario.getNome());
             insert.setString(3, funcionario.getCpf());
             insert.setDouble(4, funcionario.getSalario());
@@ -33,7 +33,7 @@ public class DiretorService implements IService<Diretor> {
         update.setString(2, funcionario.getCpf());
         update.setDouble(3, funcionario.getSalario());
         update.setDouble(4, funcionario.getBonus());
-        update.setInt(5, funcionario.getId());
+        update.setLong(5, funcionario.getId());
         update.executeUpdate();
         conn.close();
 
@@ -44,7 +44,7 @@ public class DiretorService implements IService<Diretor> {
     public Diretor delete(Diretor funcionario) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
         PreparedStatement statement2 = conn.prepareStatement("DELETE FROM folha.diretor WHERE ID = ?");
-        statement2.setInt(1, funcionario.getId());
+        statement2.setLong(1, funcionario.getId());
         statement2.executeUpdate();
         conn.close();
 

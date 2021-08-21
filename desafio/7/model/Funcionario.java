@@ -1,7 +1,7 @@
 package model;
 public class Funcionario {
 
-    private Integer id;
+    private Long id;
     private String nome;
     private String cpf;
     private Double salario;
@@ -9,18 +9,18 @@ public class Funcionario {
     public Funcionario() {
     }
 
-    public Funcionario(Integer id, String nome, String cpf, Double salario) {
+    public Funcionario(Long id, String nome, String cpf, Double salario) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,5 +46,15 @@ public class Funcionario {
 
     public void setSalario(Double salario) {
         this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", salario=" + salario +
+                '}';
     }
 }

@@ -7,6 +7,6 @@ public interface IRepository<E> {
 
     public List<E> findAll() throws SQLException, ClassNotFoundException;
 
-    public E findById(Integer id) throws SQLException, ClassNotFoundException;
+    public E findById(Long id) throws SQLException, ClassNotFoundException;
 }
 

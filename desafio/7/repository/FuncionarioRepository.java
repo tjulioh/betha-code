@@ -15,15 +15,19 @@ public class FuncionarioRepository implements IRepository<Funcionario> {
     @Override
     public List<Funcionario> findAll() throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
-        PreparedStatement statement = conn.prepareStatement("SELECT * FROM folha.funcionario ");
+        PreparedStatement statement = conn.prepareStatement("SELECT id,nome,cpf,salario FROM folha.funcionario ");
         ResultSet resultSet = null;
         resultSet = statement.executeQuery();
 
         List<Funcionario> funcionarios = new ArrayList<>();
 
         while (resultSet.next()) {
-            String index = resultSet.getString(2);
-            System.out.println(index);
+            Long id = resultSet.getLong(1);
+            String nome = resultSet.getString(2);
+            String cpf = resultSet.getString(3);
+            Double salario = resultSet.getDouble(4);
+            Funcionario funcionario = new Funcionario(id,nome,cpf,salario);
+            funcionarios.add(funcionario);
         }
         conn.close();
 
@@ -31,20 +35,23 @@ public class FuncionarioRepository implements IRepository<Funcionario> {
     }
 
     @Override
-    public Funcionario findById(Integer id) throws SQLException, ClassNotFoundException {
+    public Funcionario findById(Long id) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
-        PreparedStatement statement3 = conn.prepareStatement("SELECT * FROM folha.funcionario WHERE id = ?");
-        statement3.setInt(1, id);
-        ResultSet resultSet3 = null;
-        resultSet3 = statement3.executeQuery();
+        PreparedStatement statement = conn.prepareStatement("SELECT nome,cpf,salario FROM folha.funcionario WHERE id = ?");
+        statement.setLong(1, id);
+        ResultSet resultSet = null;
+        resultSet = statement.executeQuery();
 
-        while (resultSet3.next()) {
-            String index = resultSet3.getString(2);
-            System.out.println(index);
+        Funcionario funcionario = new Funcionario();
+        while (resultSet.next()) {
+            String nome = resultSet.getString(1);
+            String cpf = resultSet.getString(2);
+            Double salario = resultSet.getDouble(3);
+            funcionario = new Funcionario(id,nome,cpf,salario);
         }
         conn.close();
 
-        return new Funcionario();
+        return funcionario;
     }
 
 }

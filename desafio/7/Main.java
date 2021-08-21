@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         System.out.println(" - Funcionarios");
-        Funcionario funcionario = new Funcionario(1,"Thiago", "04696900975", 3951.6);
+        Funcionario funcionario = new Funcionario(1L,"Thiago", "04696900975", 3951.6);
 
         FuncionarioService funcionarioService = new FuncionarioService();
         funcionarioService.save(funcionario);
@@ -21,12 +21,14 @@ public class Main {
 
         FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
         System.out.println("Listar Todos:");
-        funcionarioRepository.findAll();
+        for (Funcionario f : funcionarioRepository.findAll()) {
+            System.out.println(f);
+        }
         System.out.println("Listar Especifico:");
-        funcionarioRepository.findById(1);
+        System.out.println(funcionarioRepository.findById(1L));
 
         System.out.println("\n - Diretores");
-        Diretor diretor = new Diretor(1,"Bruno", "07593302271", 9951.6,729.1);
+        Diretor diretor = new Diretor(1L,"Bruno", "07593302271", 9951.6,729.1);
 
         DiretorService diretorService = new DiretorService();
         diretorService.save(diretor);
@@ -36,8 +38,10 @@ public class Main {
 
         DiretorRepository diretorRepository = new DiretorRepository();
         System.out.println("Listar Todos:");
-        diretorRepository.findAll();
+        for (Diretor d : diretorRepository.findAll()) {
+            System.out.println(d);
+        }
         System.out.println("Listar Especifico:");
-        diretorRepository.findById(1);
+        System.out.println(diretorRepository.findById(1L));
     }
 }
