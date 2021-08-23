@@ -10,38 +10,38 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-        System.out.println(" - Funcionarios");
-        Funcionario funcionario = new Funcionario(1L,"Thiago", "04696900975", 3951.6);
+        System.out.println("- Funcionarios");
+        Funcionario funcionario = new Funcionario("Thiago", "04696900975", 3951.6);
 
         FuncionarioService funcionarioService = new FuncionarioService();
-        funcionarioService.save(funcionario);
+        funcionario = funcionarioService.save(funcionario);
 
         funcionario.setNome(funcionario.getNome() + " Julio");
-        funcionarioService.update(funcionario);
+        funcionario = funcionarioService.update(funcionario);
 
         FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-        System.out.println("Listar Todos:");
+        System.out.println("- Listar Todos:");
         for (Funcionario f : funcionarioRepository.findAll()) {
             System.out.println(f);
         }
-        System.out.println("Listar Especifico:");
+        System.out.println("- Listar Especifico:");
         System.out.println(funcionarioRepository.findById(1L));
 
-        System.out.println("\n - Diretores");
-        Diretor diretor = new Diretor(1L,"Bruno", "07593302271", 9951.6,729.1);
+        System.out.println("\n- Diretores");
+        Diretor diretor = new Diretor("Bruno", "07593302271", 9951.6,729.1);
 
         DiretorService diretorService = new DiretorService();
-        diretorService.save(diretor);
+        diretor = diretorService.save(diretor);
 
         diretor.setNome(diretor.getNome() + " Kurzawe");
-        diretorService.update(diretor);
+        diretor = diretorService.update(diretor);
 
         DiretorRepository diretorRepository = new DiretorRepository();
-        System.out.println("Listar Todos:");
+        System.out.println("- Listar Todos:");
         for (Diretor d : diretorRepository.findAll()) {
             System.out.println(d);
         }
-        System.out.println("Listar Especifico:");
+        System.out.println("- Listar Especifico:");
         System.out.println(diretorRepository.findById(1L));
     }
 }

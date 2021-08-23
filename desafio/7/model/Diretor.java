@@ -6,12 +6,13 @@ public class Diretor extends Funcionario{
     public Diretor() {
     }
 
-    public Diretor(Double bonus) {
+    public Diretor(Long id, String nome, String cpf, Double salario, Double bonus) {
+        super(id, nome, cpf, salario);
         this.bonus = bonus;
     }
 
-    public Diretor(Long id, String nome, String cpf, Double salario, Double bonus) {
-        super(id, nome, cpf, salario);
+    public Diretor(String nome, String cpf, Double salario, Double bonus) {
+        super(nome, cpf, salario);
         this.bonus = bonus;
     }
 
@@ -19,10 +20,15 @@ public class Diretor extends Funcionario{
         return bonus;
     }
 
+
     @Override
     public String toString() {
         return "Diretor{" +
-                "bonus=" + bonus +
+                "id=" + super.getId() +
+                ", nome='" +  super.getNome() + '\'' +
+                ", cpf='" + super.getCpf() + '\'' +
+                ", salario=" + super.getSalario() +
+                ", bonus=" + bonus +
                 '}';
     }
 

@@ -3,24 +3,25 @@ package service;
 import model.Funcionario;
 import util.ConnectionManager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class FuncionarioService implements IService<Funcionario> {
 
     @Override
     public Funcionario save(Funcionario funcionario) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
-        try (PreparedStatement insert = conn.prepareStatement("insert into folha.funcionario values(?,?,?,?)")) {
-            insert.setLong(1, funcionario.getId());
-            insert.setString(2, funcionario.getNome());
-            insert.setString(3, funcionario.getCpf());
-            insert.setDouble(4, funcionario.getSalario());
+        try (PreparedStatement insert = conn.prepareStatement("insert into folha.funcionario values(nextval('folha.SEQ_FUNCIONARIO'),?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
+            System.out.println(funcionario);
+            insert.setString(1, funcionario.getNome());
+            insert.setString(2, funcionario.getCpf());
+            insert.setDouble(3, funcionario.getSalario());
             insert.executeUpdate();
+            ResultSet rs = insert.getGeneratedKeys();
+            if(rs.next()) {
+                funcionario.setId((long) rs.getInt(1));
+            }
         }
         conn.close();
-
         return funcionario;
     }
 

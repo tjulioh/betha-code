@@ -3,22 +3,23 @@ package service;
 import model.Diretor;
 import util.ConnectionManager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DiretorService implements IService<Diretor> {
 
     @Override
     public Diretor save(Diretor funcionario) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionManager.getConnection();
-        try (PreparedStatement insert = conn.prepareStatement("insert into folha.diretor values(?,?,?,?,?)")) {
-            insert.setLong(1, funcionario.getId());
-            insert.setString(2, funcionario.getNome());
-            insert.setString(3, funcionario.getCpf());
-            insert.setDouble(4, funcionario.getSalario());
-            insert.setDouble(5, funcionario.getBonus());
+        try (PreparedStatement insert = conn.prepareStatement("insert into folha.diretor values(nextval('folha.SEQ_DIRETOR'),?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
+            insert.setString(1, funcionario.getNome());
+            insert.setString(2, funcionario.getCpf());
+            insert.setDouble(3, funcionario.getSalario());
+            insert.setDouble(4, funcionario.getBonus());
             insert.executeUpdate();
+            ResultSet rs = insert.getGeneratedKeys();
+            if(rs.next()) {
+                funcionario.setId((long) rs.getInt(1));
+            }
         }
         conn.close();
 
