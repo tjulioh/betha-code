@@ -10,7 +10,8 @@ Desafios realizados:
 - [X] Desafio 04 - [Java Herança e Encapsulamento](desafio/4/)
 - [X] Desafio 05 - [Java Polimorfismo e Sobrecarga](desafio/5/)
 - [X] Desafio 06 - [Java Interface e Abstract](extra/6/)
-- [ ] Desafio 07
+- [X] Desafio 07 - [Java Prepare Statement](extra/7/)
+- [ ] Desafio 08 - 
 
 Exercícios extras realizados:
 - [X] Exercício 01 - [Java Métodos](extra/1/)
