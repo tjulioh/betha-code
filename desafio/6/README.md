@@ -1,3 +1,3 @@
 # Desafio Java Interface e Abstract
 
-![](desafio_6.png)
+[Instrução do Desafio](desafio_6.pdf)
