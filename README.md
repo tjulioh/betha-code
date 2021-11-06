@@ -19,3 +19,5 @@ Exercícios extras realizados:
 - [X] Exercício 03 - [Java Polimorfismo e Sobrecarga](extra/3/)
 - [X] Exercício 04 - [Java Interface e Abstract](extra/4/)
 - [X] Exercício 05 - [Java Exceptions](extra/5/)
+- [X] Exercício 06 - [AngularJS Calculadora IMC](extra/6/)
+- [X] Exercício 07 - [AlguarJS CRUD Lista Presença](extra/7/)
