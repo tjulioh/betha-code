@@ -1,4 +1,4 @@
-# betha-code
+# Betha Code
 
 ### Repositório destinado ao exercícios e desafios executados ao longo do curso.
 
@@ -11,7 +11,7 @@ Desafios realizados:
 - [X] Desafio 05 - [Java Polimorfismo e Sobrecarga](desafio/5/)
 - [X] Desafio 06 - [Java Interface e Abstract](desafio/6/)
 - [X] Desafio 07 - [Java Prepare Statement](desafio/7/)
-- [ ] Desafio 08 - 
+- [X] Desafio 08 - [Projeto Final](desafio/8/)
 
 Exercícios extras realizados:
 - [X] Exercício 01 - [Java Métodos](extra/1/)
